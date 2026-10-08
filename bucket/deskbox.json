@@ -1,0 +1,46 @@
+{
+    "version": "1.5.5",
+    "description": "Free, open-source Windows desktop organizer with native WinUI 3 widgets (file boxes, todos, quick capture, search, weather, music).",
+    "homepage": "https://github.com/Tianyu199509/DeskBox",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "Everything": "everything"
+    },
+    "innounp": true,
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Tianyu199509/DeskBox/releases/download/v1.5.5/DeskBox_Setup_1.5.5_x64.exe",
+            "hash": "02b20b572de763c55e821440f8e68c2b1471a363475a9b058bcff080a5c1e2c0"
+        },
+        "arm64": {
+            "url": "https://github.com/Tianyu199509/DeskBox/releases/download/v1.5.5/DeskBox_Setup_1.5.5_arm64.exe",
+            "hash": "5593b31a193f84b0e6331f7bac7b88867785119a0b768e29a500b361a4acda7c"
+        }
+    },
+    "bin": "DeskBox.exe",
+    "shortcuts": [
+        [
+            "DeskBox.exe",
+            "DeskBox"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Tianyu199509/DeskBox/releases/download/v$version/DeskBox_Setup_${version}_x64.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/Tianyu199509/DeskBox/releases/download/v$version/DeskBox_Setup_${version}_arm64.exe"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    },
+    "notes": [
+        "DeskBox does not ship an official portable build; this manifest extracts the Inno Setup installer via innounp.",
+        "The in-app updater relies on registry entries written by the official installer - disable in-app auto-update and use 'scoop update deskbox' instead.",
+        "Requires Windows 10 21H2 (19044) or newer. Install Everything (scoop install everything) to enable desktop file-search integration."
+    ]
+}
