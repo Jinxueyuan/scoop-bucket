@@ -1,0 +1,55 @@
+{
+    "version": "0.1.1150",
+    "description": "One app and local gateway for 45+ AI coding agents (Claude Code, Codex, Gemini CLI, ...): pick any model from any provider, with routing groups, fail-over, plugins and a TUI.",
+    "homepage": "https://usemagpie.ai",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1150/magpie-windows-amd64.exe",
+            "hash": "76e791e2fdd0ed8664471bf203711081e49e75aeaadb25ef636cf433ef4ff665",
+            "bin": [
+                [
+                    "magpie-windows-amd64.exe",
+                    "magpie"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "magpie-windows-amd64.exe",
+                    "magpie"
+                ]
+            ]
+        },
+        "arm64": {
+            "url": "https://github.com/yetone/magpie-releases/releases/download/v0.1.1150/magpie-windows-arm64.exe",
+            "hash": "ae69722c1643a52a45d8b65e34cf19d1e42eae095ae0ab53753a64b7ba7ff2aa",
+            "bin": [
+                [
+                    "magpie-windows-arm64.exe",
+                    "magpie"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "magpie-windows-arm64.exe",
+                    "magpie"
+                ]
+            ]
+        }
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/yetone/magpie-releases/releases/download/v$version/magpie-windows-amd64.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/yetone/magpie-releases/releases/download/v$version/magpie-windows-arm64.exe"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/yetone/magpie-releases/releases/download/v$version/SHA256SUMS",
+            "regex": "([a-f0-9]{64})\\s+\\*?$basename"
+        }
+    }
+}
