@@ -1,0 +1,30 @@
+name: Update Scoop manifests
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run every 4 hours, in UTC.
+    - cron: '20 */4 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scoop-manifest-update-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  excavate:
+    name: Update manifests
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check and update manifests
+        uses: ScoopInstaller/GithubActions@5bceeda181721d9d10a18fdcc3ddca6f33467ae6 # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: '1'
+          THROW_ERROR: '1'
