@@ -5,10 +5,10 @@
     "license": "Unknown",
     "url": "https://github.com/MrBeanCpp/AltTaber/releases/download/v0.5.0/AltTaber.zip",
     "hash": "B1AA6D696AFFF17C751C2C68D2C8E43EDF81F60EC8ACB211EE8604E046E59792",
-    "bin": "AltTaber.exe",
+    "bin": "AltTaber\\AltTaber.exe",
     "shortcuts": [
         [
-            "AltTaber.exe",
+            "AltTaber\\AltTaber.exe",
             "AltTaber"
         ]
     ],
